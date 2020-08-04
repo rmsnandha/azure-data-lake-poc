@@ -1,0 +1,14 @@
+{
+	"name": "insightpocDataLake",
+	"properties": {
+		"description": "insightpocDataLake",
+		"annotations": [],
+		"type": "AzureDataLakeStore",
+		"typeProperties": {
+			"dataLakeStoreUri": "https://insightpoc.azuredatalakestore.net/webhdfs/v1",
+			"tenant": "036d8512-53b0-4729-b3f2-4235527df8b2",
+			"subscriptionId": "07ad6dfc-450d-44ed-932b-edc070bc6af7",
+			"resourceGroupName": "insightpoc"
+		}
+	}
+}
