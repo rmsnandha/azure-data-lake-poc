@@ -1,5 +1,5 @@
 {
-	"name": "Json1",
+	"name": "datalake",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "insightpocDataLake",
