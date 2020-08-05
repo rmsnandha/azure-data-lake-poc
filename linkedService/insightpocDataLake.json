@@ -1,7 +1,7 @@
 {
 	"name": "insightpocDataLake",
 	"properties": {
-		"description": "insightpocDataLake",
+		"description": "toLake",
 		"annotations": [],
 		"type": "AzureDataLakeStore",
 		"typeProperties": {
