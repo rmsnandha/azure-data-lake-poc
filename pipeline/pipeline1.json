@@ -34,7 +34,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "CosmosDbMongoDbApiCollection1",
+						"referenceName": "mongoDB",
 						"type": "DatasetReference"
 					}
 				],
