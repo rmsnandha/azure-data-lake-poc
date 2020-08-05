@@ -9,7 +9,12 @@
 		"type": "Json",
 		"typeProperties": {
 			"location": {
-				"type": "AzureDataLakeStoreLocation"
+				"type": "AzureDataLakeStoreLocation",
+				"fileName": "emp.json",
+				"folderPath": {
+					"value": "@utcnow()",
+					"type": "Expression"
+				}
 			}
 		}
 	}
