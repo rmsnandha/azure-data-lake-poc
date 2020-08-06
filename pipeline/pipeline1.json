@@ -17,13 +17,29 @@
 				"typeProperties": {
 					"source": {
 						"type": "CosmosDbMongoDbApiSource",
-						"batchSize": 100
+						"batchSize": 10
+					},
+					"sink": {
+						"type": "JsonSink",
+						"storeSettings": {
+							"type": "AzureDataLakeStoreWriteSettings"
+						},
+						"formatSettings": {
+							"type": "JsonWriteSettings",
+							"quoteAllText": true
+						}
 					},
 					"enableStaging": false
 				},
 				"inputs": [
 					{
 						"referenceName": "CosmosDbMongoDbApiCollection1",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "lake",
 						"type": "DatasetReference"
 					}
 				]
