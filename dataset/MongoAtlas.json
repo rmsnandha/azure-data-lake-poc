@@ -1,6 +1,10 @@
 {
 	"name": "MongoAtlas",
 	"properties": {
+		"linkedServiceName": {
+			"referenceName": "MongoDb1",
+			"type": "LinkedServiceReference"
+		},
 		"annotations": [],
 		"type": "MongoDbV2Collection",
 		"schema": []
