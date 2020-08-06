@@ -16,8 +16,15 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "CosmosDbMongoDbApiSource",
-						"batchSize": 10
+						"type": "JsonSource",
+						"storeSettings": {
+							"type": "AzureDataLakeStoreReadSettings",
+							"fileListPath": "source/employee.json",
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "JsonReadSettings"
+						}
 					},
 					"sink": {
 						"type": "JsonSink",
@@ -28,14 +35,14 @@
 						"formatSettings": {
 							"type": "JsonWriteSettings",
 							"quoteAllText": true,
-							"filePattern": "arrayOfObjects"
+							"filePattern": "setOfObjects"
 						}
 					},
 					"enableStaging": false
 				},
 				"inputs": [
 					{
-						"referenceName": "mongo",
+						"referenceName": "lake",
 						"type": "DatasetReference"
 					}
 				],
