@@ -1,5 +1,5 @@
 {
-	"name": "mongo",
+	"name": "mongoCosmos",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "CosmosDbMongoDbApi1",
