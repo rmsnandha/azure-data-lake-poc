@@ -1,0 +1,8 @@
+{
+	"name": "MongoAtlas",
+	"properties": {
+		"annotations": [],
+		"type": "MongoDbV2Collection",
+		"schema": []
+	}
+}
