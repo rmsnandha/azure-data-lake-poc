@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "CosmosDbMongoDbApiSource",
+						"type": "MongoDbV2Source",
 						"batchSize": 100
 					},
 					"sink": {
@@ -35,7 +35,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "mongoCosmos",
+						"referenceName": "MongoAtlas",
 						"type": "DatasetReference"
 					}
 				],
