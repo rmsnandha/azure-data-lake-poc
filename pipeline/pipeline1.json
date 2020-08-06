@@ -37,16 +37,17 @@
 							{
 								"source": {
 									"path": "$['_id']"
+								},
+								"sink": {
+									"path": "_id"
 								}
 							},
 							{
 								"source": {
 									"path": "$['name']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['_partitionKey']"
+								},
+								"sink": {
+									"path": "firstName"
 								}
 							}
 						]
