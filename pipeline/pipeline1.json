@@ -33,7 +33,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "CosmosDbMongoDbApiCollection1",
+						"referenceName": "mongo",
 						"type": "DatasetReference"
 					}
 				],
