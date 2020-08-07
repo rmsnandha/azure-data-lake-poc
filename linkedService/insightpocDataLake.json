@@ -11,7 +11,7 @@
 			"resourceGroupName": "insightpoc"
 		},
 		"connectVia": {
-			"referenceName": "selfHostRuntime",
+			"referenceName": "customRunTime",
 			"type": "IntegrationRuntimeReference"
 		}
 	}
