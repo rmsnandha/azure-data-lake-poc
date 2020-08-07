@@ -2,15 +2,14 @@
 	"name": "lake",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "insightpocDataLake",
+			"referenceName": "lake",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
 		"type": "Json",
 		"typeProperties": {
 			"location": {
-				"type": "AzureDataLakeStoreLocation",
-				"folderPath": "destination"
+				"type": "AzureDataLakeStoreLocation"
 			}
 		}
 	}
