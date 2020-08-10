@@ -12,7 +12,15 @@
 			},
 			"fileName": {
 				"type": "string",
-				"defaultValue": "myDummyFile"
+				"defaultValue": "my-data-file"
+			},
+			"processTime": {
+				"type": "string",
+				"defaultValue": "processTime"
+			},
+			"fileExtention": {
+				"type": "string",
+				"defaultValue": ".json"
 			}
 		},
 		"annotations": [],
