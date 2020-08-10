@@ -53,7 +53,7 @@
 							"folder": "target",
 							"fileName": "hello",
 							"processTime": {
-								"value": "@pipeline().TriggerTime",
+								"value": "myTime",
 								"type": "Expression"
 							},
 							"fileExtention": ".json"
