@@ -66,7 +66,7 @@
 							"source": {
 								"type": "CosmosDbMongoDbApiSource",
 								"batchSize": 100,
-								"filter": "{'name': 'nanda2'} "
+								"filter": ""
 							},
 							"sink": {
 								"type": "JsonSink",
@@ -103,6 +103,28 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/mongoCosmos')]",
 				"[concat(variables('factoryId'), '/datasets/Json1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Json1')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "lake",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Json",
+				"typeProperties": {
+					"location": {
+						"type": "AzureDataLakeStoreLocation"
+					}
+				},
+				"schema": {}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/lake')]"
 			]
 		},
 		{
@@ -186,6 +208,28 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/lake')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureDataLakeStore",
+				"typeProperties": {
+					"dataLakeStoreUri": "[parameters('lake_properties_typeProperties_dataLakeStoreUri')]",
+					"tenant": "[parameters('lake_properties_typeProperties_tenant')]",
+					"subscriptionId": "[parameters('lake_properties_typeProperties_subscriptionId')]",
+					"resourceGroupName": "[parameters('lake_properties_typeProperties_resourceGroupName')]"
+				},
+				"connectVia": {
+					"referenceName": "selfHostRuntime",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/integrationRuntimes/selfHostRuntime')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/customRunTime')]",
 			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
 			"apiVersion": "2018-06-01",
@@ -213,50 +257,6 @@
 				"typeProperties": {}
 			},
 			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/lake')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureDataLakeStore",
-				"typeProperties": {
-					"dataLakeStoreUri": "[parameters('lake_properties_typeProperties_dataLakeStoreUri')]",
-					"tenant": "[parameters('lake_properties_typeProperties_tenant')]",
-					"subscriptionId": "[parameters('lake_properties_typeProperties_subscriptionId')]",
-					"resourceGroupName": "[parameters('lake_properties_typeProperties_resourceGroupName')]"
-				},
-				"connectVia": {
-					"referenceName": "selfHostRuntime",
-					"type": "IntegrationRuntimeReference"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/integrationRuntimes/selfHostRuntime')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Json1')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "lake",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "Json",
-				"typeProperties": {
-					"location": {
-						"type": "AzureDataLakeStoreLocation"
-					}
-				},
-				"schema": {}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/lake')]"
-			]
 		}
 	]
 }
