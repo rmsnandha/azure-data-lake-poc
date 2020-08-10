@@ -59,6 +59,18 @@
 				]
 			}
 		],
+		"parameters": {
+			"pipeParamOne": {
+				"type": "string",
+				"defaultValue": "pipeParamOneValue"
+			}
+		},
+		"variables": {
+			"pipeVarOne": {
+				"type": "String",
+				"defaultValue": "pipeVarOneValue"
+			}
+		},
 		"annotations": []
 	}
 }
