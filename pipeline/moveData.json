@@ -17,7 +17,8 @@
 				"typeProperties": {
 					"source": {
 						"type": "CosmosDbMongoDbApiSource",
-						"batchSize": 100
+						"batchSize": 100,
+						"filter": "({\"name\": \"nanda\"} )"
 					},
 					"sink": {
 						"type": "JsonSink",
