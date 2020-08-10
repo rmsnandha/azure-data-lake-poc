@@ -62,7 +62,7 @@
 			}
 		],
 		"parameters": {
-			"folder": {
+			"pipeParamOne": {
 				"type": "string",
 				"defaultValue": "pipeParamOneValue"
 			}
