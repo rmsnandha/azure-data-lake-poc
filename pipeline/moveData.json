@@ -52,7 +52,7 @@
 						"parameters": {
 							"fileName": "hello",
 							"processTime": {
-								"value": "myTime",
+								"value": "\"@formatDateTime(pipipeline().TriggerTime,    'MM-dd-yyyy_hh-mm-ss')\"",
 								"type": "Expression"
 							},
 							"fileExtention": ".json"
@@ -62,7 +62,7 @@
 			}
 		],
 		"parameters": {
-			"pipeParamOne": {
+			"folder": {
 				"type": "string",
 				"defaultValue": "pipeParamOneValue"
 			}
