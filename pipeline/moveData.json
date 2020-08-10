@@ -50,10 +50,13 @@
 						"referenceName": "Json1",
 						"type": "DatasetReference",
 						"parameters": {
+							"folder": "target",
+							"fileName": "hello",
 							"processTime": {
 								"value": "@pipeline().TriggerTime",
 								"type": "Expression"
-							}
+							},
+							"fileExtention": ".json"
 						}
 					}
 				]
