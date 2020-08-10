@@ -18,7 +18,7 @@
 					"source": {
 						"type": "CosmosDbMongoDbApiSource",
 						"batchSize": 100,
-						"filter": "{'name': 'nanda'} "
+						"filter": "{'name': 'nanda2'} "
 					},
 					"sink": {
 						"type": "JsonSink",
