@@ -1,0 +1,98 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "datafactory-insightpoc"
+		},
+		"CosmosDbMongoDbApi1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'CosmosDbMongoDbApi1'"
+		},
+		"MongoDb1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'MongoDb1'"
+		},
+		"CosmosDbMongoDbApi1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "test"
+		},
+		"MongoDb1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "test"
+		},
+		"lake_properties_typeProperties_dataLakeStoreUri": {
+			"type": "string",
+			"defaultValue": "https://datalakeinsight.azuredatalakestore.net/webhdfs/v1"
+		},
+		"lake_properties_typeProperties_tenant": {
+			"type": "string",
+			"defaultValue": "036d8512-53b0-4729-b3f2-4235527df8b2"
+		},
+		"lake_properties_typeProperties_subscriptionId": {
+			"type": "string",
+			"defaultValue": "07ad6dfc-450d-44ed-932b-edc070bc6af7"
+		},
+		"lake_properties_typeProperties_resourceGroupName": {
+			"type": "string",
+			"defaultValue": "insightpoc"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"CosmosDbMongoDbApi1_connectionString": {
+						"value": "[parameters('CosmosDbMongoDbApi1_connectionString')]"
+					},
+					"MongoDb1_connectionString": {
+						"value": "[parameters('MongoDb1_connectionString')]"
+					},
+					"CosmosDbMongoDbApi1_properties_typeProperties_database": {
+						"value": "[parameters('CosmosDbMongoDbApi1_properties_typeProperties_database')]"
+					},
+					"MongoDb1_properties_typeProperties_database": {
+						"value": "[parameters('MongoDb1_properties_typeProperties_database')]"
+					},
+					"lake_properties_typeProperties_dataLakeStoreUri": {
+						"value": "[parameters('lake_properties_typeProperties_dataLakeStoreUri')]"
+					},
+					"lake_properties_typeProperties_tenant": {
+						"value": "[parameters('lake_properties_typeProperties_tenant')]"
+					},
+					"lake_properties_typeProperties_subscriptionId": {
+						"value": "[parameters('lake_properties_typeProperties_subscriptionId')]"
+					},
+					"lake_properties_typeProperties_resourceGroupName": {
+						"value": "[parameters('lake_properties_typeProperties_resourceGroupName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

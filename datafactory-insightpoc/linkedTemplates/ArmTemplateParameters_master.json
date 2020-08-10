@@ -1,0 +1,39 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "datafactory-insightpoc"
+		},
+		"CosmosDbMongoDbApi1_connectionString": {
+			"value": ""
+		},
+		"MongoDb1_connectionString": {
+			"value": ""
+		},
+		"CosmosDbMongoDbApi1_properties_typeProperties_database": {
+			"value": "test"
+		},
+		"MongoDb1_properties_typeProperties_database": {
+			"value": "test"
+		},
+		"lake_properties_typeProperties_dataLakeStoreUri": {
+			"value": "https://datalakeinsight.azuredatalakestore.net/webhdfs/v1"
+		},
+		"lake_properties_typeProperties_tenant": {
+			"value": "036d8512-53b0-4729-b3f2-4235527df8b2"
+		},
+		"lake_properties_typeProperties_subscriptionId": {
+			"value": "07ad6dfc-450d-44ed-932b-edc070bc6af7"
+		},
+		"lake_properties_typeProperties_resourceGroupName": {
+			"value": "insightpoc"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
