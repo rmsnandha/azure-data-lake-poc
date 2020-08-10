@@ -9,13 +9,25 @@
 			"folder": {
 				"type": "string",
 				"defaultValue": "target"
+			},
+			"fileName": {
+				"type": "string",
+				"defaultValue": "myDummyFile"
 			}
 		},
 		"annotations": [],
 		"type": "Json",
 		"typeProperties": {
 			"location": {
-				"type": "AzureDataLakeStoreLocation"
+				"type": "AzureDataLakeStoreLocation",
+				"fileName": {
+					"value": "@dataset().fileName",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@dataset().folder",
+					"type": "Expression"
+				}
 			}
 		}
 	}
