@@ -5,6 +5,12 @@
 			"referenceName": "lake",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"folder": {
+				"type": "string",
+				"defaultValue": "target"
+			}
+		},
 		"annotations": [],
 		"type": "Json",
 		"typeProperties": {
