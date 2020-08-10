@@ -48,7 +48,13 @@
 				"outputs": [
 					{
 						"referenceName": "Json1",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"processTime": {
+								"value": "@pipeline().TriggerTime",
+								"type": "Expression"
+							}
+						}
 					}
 				]
 			}
