@@ -28,10 +28,6 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureDataLakeStoreLocation",
-				"fileName": {
-					"value": "@concat(dataset().fileName,  dataset().processTime,  dataset().fileExtention)",
-					"type": "Expression"
-				},
 				"folderPath": {
 					"value": "@dataset().folder",
 					"type": "Expression"
