@@ -51,7 +51,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"folder": "target",
-							"fileName": "hello-",
+							"fileName": "hello",
 							"fileExtention": ".json"
 						}
 					}
