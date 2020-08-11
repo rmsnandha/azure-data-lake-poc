@@ -52,10 +52,6 @@
 						"parameters": {
 							"folder": "target",
 							"fileName": "hello-",
-							"processTime": {
-								"value": "@utcnow()",
-								"type": "Expression"
-							},
 							"fileExtention": ".json"
 						}
 					}
