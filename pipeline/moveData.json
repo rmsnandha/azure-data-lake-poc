@@ -50,9 +50,10 @@
 						"referenceName": "Json1",
 						"type": "DatasetReference",
 						"parameters": {
-							"fileName": "hello",
+							"folder": "target",
+							"fileName": "hello-",
 							"processTime": {
-								"value": "\"processTime\": \"processValue\"",
+								"value": "@utcnow()",
 								"type": "Expression"
 							},
 							"fileExtention": ".json"
