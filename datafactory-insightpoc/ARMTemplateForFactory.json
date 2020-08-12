@@ -61,12 +61,17 @@
 							"secureOutput": false,
 							"secureInput": false
 						},
-						"userProperties": [],
+						"userProperties": [
+							{
+								"name": "pipe-prop-folder",
+								"value": "target1"
+							}
+						],
 						"typeProperties": {
 							"source": {
 								"type": "CosmosDbMongoDbApiSource",
 								"batchSize": 100,
-								"filter": ""
+								"filter": "{'name': 'nanda'} "
 							},
 							"sink": {
 								"type": "JsonSink",
@@ -93,11 +98,27 @@
 							{
 								"referenceName": "Json1",
 								"type": "DatasetReference",
-								"parameters": {}
+								"parameters": {
+									"folder": "target",
+									"fileName": "hello",
+									"fileExtention": ".json"
+								}
 							}
 						]
 					}
 				],
+				"parameters": {
+					"pipeParamOne": {
+						"type": "string",
+						"defaultValue": "pipeParamOneValue"
+					}
+				},
+				"variables": {
+					"pipeVarOne": {
+						"type": "String",
+						"defaultValue": "pipeVarOneValue"
+					}
+				},
 				"annotations": []
 			},
 			"dependsOn": [
@@ -114,11 +135,37 @@
 					"referenceName": "lake",
 					"type": "LinkedServiceReference"
 				},
+				"parameters": {
+					"folder": {
+						"type": "string",
+						"defaultValue": "target"
+					},
+					"fileName": {
+						"type": "string",
+						"defaultValue": "my-data-file"
+					},
+					"processTime": {
+						"type": "string",
+						"defaultValue": "processTime"
+					},
+					"fileExtention": {
+						"type": "string",
+						"defaultValue": ".json"
+					}
+				},
 				"annotations": [],
 				"type": "Json",
 				"typeProperties": {
 					"location": {
-						"type": "AzureDataLakeStoreLocation"
+						"type": "AzureDataLakeStoreLocation",
+						"fileName": {
+							"value": "@concat(dataset().fileName,  dataset().processTime,  dataset().fileExtention)",
+							"type": "Expression"
+						},
+						"folderPath": {
+							"value": "@dataset().folder",
+							"type": "Expression"
+						}
 					}
 				},
 				"schema": {}
